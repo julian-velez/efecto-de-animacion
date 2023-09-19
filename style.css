@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+  }
+
+  .funhouse-mirror {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+    transform: scaleX(-1) skewX(-20deg);
+    border: 10px solid #f06;
+    animation: wobble 1s infinite alternate, colorChange 3s infinite alternate;
+  }
+
+  @keyframes wobble {
+    from {
+      transform: scaleX(-1) skewX(-20deg);
+    }
+    to {
+      transform: scaleX(-1) skewX(20deg);
+    }
+  }
+
+  @keyframes colorChange {
+    0%, 100% {
+      border-color: #f06;
+    }
+    50% {
+      border-color: #0cf;
+    }
+  }
